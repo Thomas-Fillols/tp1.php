@@ -14,8 +14,8 @@
         $message .= 'Sexe : ' . PHP_EOL . $sexe;
         $message .= 'Telephone : ' . PHP_EOL . $telephone;
         $message .= 'Pays : ' . PHP_EOL . $pays;
-
         echo'<br/><strong>Mail envoyé</strong><br>';
+        mail($email,'test',$message);
     }
     else{
         echo'<br/><strong>Bouton non géré !</strong><br>';

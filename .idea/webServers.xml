@@ -2,8 +2,13 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="eca2e324-a538-4c2e-972c-1c2d92f44993" name="local" url="http://localhost:8080">
-        <fileTransfer port="0" accessType="LOCAL" />
+      <webServer id="597d6c16-35c5-4a3d-96f3-a32dc759f66b" name="test" url="http://thomasfillols.alwaysdata.net">
+        <fileTransfer host="ssh-thomasfillols.alwaysdata.net" port="22" rootFolder="/home/thomasfillols" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
       </webServer>
     </option>
   </component>
