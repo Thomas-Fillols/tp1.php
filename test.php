@@ -2,14 +2,17 @@
 
 function start_page($title)
 {
-    echo ' <!DOCTYPE html> <html
-lang="fr"><head></title><hr/><br/><strong>' . PHP_EOL . $title . '</strong><br/><hr/></head><body>' . PHP_EOL
-    ;
+    echo'<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>'.PHP_EOL.$title.'</title>
+</head>
+<body>'.PHP_EOL;
 };
 
-function end_page($title)
+
+function end_page()
 {
-    echo ' <!DOCTYPE html> <html
-lang="fr"><footer><hr/><br/><strong>' . PHP_EOL . $title . '</strong><br/><hr/></footer><body>' . PHP_EOL
-    ;
-};
+    echo'</body>
+</html>';
+}

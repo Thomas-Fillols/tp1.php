@@ -17,7 +17,6 @@ include 'test.php';
 
     $operateurs ="*+–/";
 
-
     for ($cpt = 0; $cpt <= 3; ++$cpt) {
     echo '<input ';
     if ($cpt == 0) {
@@ -26,6 +25,6 @@ include 'test.php';
     echo 'type="radio" name="op" value="' . $operateurs[$cpt] . '"/>' . $operateurs[$cpt] . ' <br/>' . "\n";
     }?>
 
-<input type="submit" value="submit">Envoyer<br/>
+<input type="submit" value="submit" name="action">Envoyer<br/>
     <input type="reset" value="reset">Reset<br/>
 </form>
