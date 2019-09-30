@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="597d6c16-35c5-4a3d-96f3-a32dc759f66b" name="test" url="http://thomasfillols.alwaysdata.net">
+      <webServer id="b38b8391-8d0c-44f3-bb7d-0c901c5ef4a2" name="pika" url="http://thomasfillols.alwaysdata.net">
         <fileTransfer host="ssh-thomasfillols.alwaysdata.net" port="22" rootFolder="/home/thomasfillols" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

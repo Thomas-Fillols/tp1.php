@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="test">
+      <paths name="pika">
         <serverdata>
           <mappings>
             <mapping deploy="/www/" local="$PROJECT_DIR$" web="/" />

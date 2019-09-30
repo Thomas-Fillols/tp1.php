@@ -1,4 +1,14 @@
 <?php
+
+    $dbLink=mysqli_connect('mysql-thomasfillols.alwaysdata.net', '189840','pikachuchu')
+        or die('Erreur de connexion au serveur:'.mysqli_connect_error());
+
+    mysqli_select_db($dbLink,'thomasfillols_td2')
+        or die('Erreur dans la sélection de la base:'.mysqli_error($dbLink));
+
+    $today=date('Y-m-d');
+
+
     $identifiant = $_POST['identifiant'];
     $sexe = $_POST['sexe'];
     $email = $_POST['E-mail'];
@@ -6,6 +16,15 @@
     $telephone = $_POST['téléphone'];
     $pays = $_POST['nomPays'];
     $action = $_POST['action'];
+
+    $query='INSERT INTO User(date, id, password, pays, sexe, email,telephone)VALUES(';
+    $query.='"'.$today.'",';
+    $query.='"'.$identifiant.'",';
+    $query.='"'.$password.'",';
+    $query.='"'.$pays.'",';
+    $query.='"'.$sexe.'",';
+    $query.='"'.$email.'")';
+    $query.='"'.$telephone.'")';
 
     if ($action == 'mailer'){
         $message = 'Voici vos identifiants d\'inscription :' . PHP_EOL . $identifiant;
