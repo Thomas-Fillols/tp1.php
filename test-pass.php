@@ -9,7 +9,6 @@
 
     $identifiant = $_POST['identifiant'];
     $mdp = $_POST['mdp'];
-    ;
 
     $query="SELECT id,password FROM User where id = '$identifiant' and password = '$mdp'";
 
@@ -22,14 +21,11 @@
         exit();
     };
 
-    if($dbRow=mysqli_fetch_assoc($dbResult)){
-        while($dbRow=mysqli_fetch_assoc($dbResult)) {
+        $dbRow=mysqli_fetch_assoc($dbResult);
+
             if ($dbRow['id'] == $identifiant && $dbRow['password'] == $mdp) {
                 header('Location:page1.php');
             } else {
-                echo "erreuy";
+                header('Location:page2.php');
             }
-        }
-    }else {
-        header('Location:page2.php');
-    }
+
