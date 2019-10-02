@@ -8,7 +8,6 @@
 
     $today=date('Y-m-d');
 
-
     $identifiant = $_POST['identifiant'];
     $sexe = $_POST['sexe'];
     $email = $_POST['E-mail'];
@@ -17,14 +16,23 @@
     $pays = $_POST['nomPays'];
     $action = $_POST['action'];
 
-    $query='INSERT INTO User(date, id, password, pays, sexe, email,telephone)VALUES(';
+    $query='INSERT INTO User(date1,password,pays,sexe,email,telephone)VALUES(';
     $query.='"'.$today.'",';
-    $query.='"'.$identifiant.'",';
+    //$query.='"'.$identifiant.'",';
     $query.='"'.$password.'",';
     $query.='"'.$pays.'",';
     $query.='"'.$sexe.'",';
-    $query.='"'.$email.'")';
+    $query.='"'.$email.'",';
     $query.='"'.$telephone.'")';
+
+    if(!($dbResult=mysqli_query($dbLink, $query))){
+        echo'Erreur de requête<br/>';
+        //Affiche le type d'erreur.
+        echo'Erreur:'.mysqli_error($dbLink).'<br/>';
+        //Affiche la requête envoyée.
+        echo'Requête:'.$query.'<br/>';
+        exit();
+    }
 
     if ($action == 'mailer'){
         $message = 'Voici vos identifiants d\'inscription :' . PHP_EOL . $identifiant;
@@ -33,9 +41,11 @@
         $message .= 'Sexe : ' . PHP_EOL . $sexe;
         $message .= 'Telephone : ' . PHP_EOL . $telephone;
         $message .= 'Pays : ' . PHP_EOL . $pays;
-        echo'<br/><strong>Mail envoyé</strong><br>';
-        mail($email,'test',$message);
+        echo'<br/><strong>Envoyé</strong><br>';
+        //mail($email,'test',$message);
     }
+
     else{
         echo'<br/><strong>Bouton non géré !</strong><br>';
     }
+
